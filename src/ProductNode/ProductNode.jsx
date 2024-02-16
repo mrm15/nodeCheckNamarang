@@ -10,7 +10,7 @@ const MyComponent = () => {
 
     <div
       id={'i_want_to_take_screenshot_here'}
-      className={'p-5'}
+      className={'p-5 flex flex-col items-center'}
     >
       <PictureSection/>
       <TableSection/>
