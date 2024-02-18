@@ -50,8 +50,17 @@ const MyComponent = () => {
 
 
   return (<div
-    className={'text-center'}
+className={'flex flex-row-reverse items-end '}
   >
+  <div
+
+  className={'font_size_45 font-bold'}
+  style={{fontFamily:'arial,serif'}}
+  >
+
+    {fullData.fileNumberText}
+
+  </div>
     {/* File input */}
     {/*<input*/}
     {/*  type="file"*/}
@@ -69,6 +78,7 @@ const MyComponent = () => {
          // onFocus={selectTextPlease}
       style={{
         minHeight:'100px',
+        minWidth:'100px',
         border:'1px solid rgba(0, 0, 0, 0.1)',
       }}
     >
