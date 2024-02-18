@@ -28,27 +28,33 @@ const LightSection = ({minWidth}) => {
   }
 
   const lightButtonHandler = ({text, checkForm}) => {
-    setIsModalOpen(false);
+
     if (!checkForm) {
       setFullData({lightNameText: text, ...afterCloseLightModal})
     } else {
       //
       let MyNewText = <></>
+      let hasValue = false
 
       fullData.lightModalData.forEach(row => {
         if (row.value) {
+          hasValue = true
           // Assuming row.value contains the text you want to add
           MyNewText = (<>
             {MyNewText} {/* Add existing content */}
-            <div>{row.key}-{row.value}-{row.categoryText}</div>
+            <div>{row.categoryText}-{row.key}-{row.value}</div>
             {/* Add div element with text */}
           </>);
         }
       });
+
+      if (!hasValue) {
+        return
+      }
       setFullData({lightNameText: MyNewText, ...afterCloseLightModal})
     }
 
-
+    setIsModalOpen(false);
   }
 
   return (<>
@@ -97,6 +103,8 @@ const LightSection = ({minWidth}) => {
       onClick={handleClick}
       style={{
         minWidth: minWidth ? minWidth : undefined, height: '100%',
+        textAlign:"justify",
+
       }}
     >
       {fullData.lightNameText}
