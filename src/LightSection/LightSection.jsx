@@ -1,77 +1,107 @@
-import {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {MainContext} from "../Context/Context.jsx";
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content'
+import Modal from "../Modal/Modal.jsx";
+import ShowOptions from "./ShowOptions.jsx";
+import {afterCloseLightModal} from "../util/initials.js";
 
 
-const LightSection = () => {
-  const MySwal = withReactContent(Swal)
+// eslint-disable-next-line react/prop-types
+const LightSection = ({minWidth}) => {
+
 
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
 
+  const smdOptions = fullData.lightModalData.filter(row => row.category === 'smd');
+  const injectionOptions = fullData.lightModalData.filter(row => row.category === 'injection');
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const handleClick = () => {
-
-    const clickTest = () => {
-      MySwal.close()
-
-      MySwal.fire(myObject)
-    }
-
-
-    const myObject = {
-      title: <p>Hello World</p>, html: <div className={'flex gap-4'}>
-        <div className="flex flex-col w-full">
-          <div className={'w-full text-center'}>
-             برند اولی
-          </div>
-
-          <div className={'flex w-full'}>
-            <button
-
-              onClick={clickTest}
-              className=" block my-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">ندارد
-            </button>
-            <input
-              style={{width: 80}}
-            />
-          </div>
-          <button className="my-1 bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">آفتابی
-          </button>
-          <button className="my-1 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">سفید</button>
-          <button className="my-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">قرمز</button>
-          <button className="my-1 bg-amber-300 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded">انبه ای
-          </button>
-          <button className="my-1 bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded">متفرقه</button>
-        </div>
-        <div className="flex flex-col w-full">
-          <div>برند دومی</div>
-
-          <button className="my-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">ندارد</button>
-          <button className="my-1 bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">آفتابی
-          </button>
-          <button className="my-1 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">سفید</button>
-          <button className="my-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">قرمز</button>
-          <button className="my-1 bg-amber-300 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded">انبه ای
-          </button>
-          <button className="my-1 bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded">متفرقه</button>
-        </div>
-      </div>
-    }
-    MySwal.fire(myObject)
-    // .then(() => {
-    //   return MySwal.fire(<p>Shorthand works too</p>)
-    // })
+    setIsModalOpen(true)
   }
 
-  return (<div
-    onClick={handleClick}
-    style={{
-      width: '100%', height: '100%',
-    }}
-  >
-    {fullData.lightNameText}
-  </div>);
+  const closeLightModal = () => {
+    setIsModalOpen(false);
+    setFullData(afterCloseLightModal)
+  }
+
+  const lightButtonHandler = ({text, checkForm}) => {
+    setIsModalOpen(false);
+    if (!checkForm) {
+      setFullData({lightNameText: text, ...afterCloseLightModal})
+    } else {
+      //
+      let MyNewText = <></>
+
+      fullData.lightModalData.forEach(row => {
+        if (row.value) {
+          // Assuming row.value contains the text you want to add
+          MyNewText = (<>
+            {MyNewText} {/* Add existing content */}
+            <div>{row.key}-{row.value}-{row.categoryText}</div>
+            {/* Add div element with text */}
+          </>);
+        }
+      });
+      setFullData({lightNameText: MyNewText, ...afterCloseLightModal})
+    }
+
+
+  }
+
+  return (<>
+    {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeLightModal}>
+      <div className={'min-w-96'}>
+        <div className={'flex gap-4 '}>
+          <div className="flex flex-col w-full">
+            <div className={'w-full text-center font-bold border-2 '}>
+              SMD
+            </div>
+            <div className={'w-full'}>
+              <ShowOptions
+                optionMap={smdOptions}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col w-full">
+            <div className={'w-full text-center font-bold border-2 '}>
+              اینجکشن
+            </div>
+            <div className={'w-full'}>
+              <ShowOptions
+                optionMap={injectionOptions}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={'w-full flex items-center content-center justify-center mt-3'}>
+          <button onClick={() => lightButtonHandler({text: 'ندارد'})}
+                  className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> ندارد
+          </button>
+          <button
+            onClick={() => lightButtonHandler({text: 'متفرقه'})}
+            className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> متفرقه
+          </button>
+          <button
+            onClick={() => lightButtonHandler({text: '', checkForm: true})}
+            className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> تایید
+            موارد فرم
+          </button>
+
+        </div>
+      </div>
+    </Modal>}
+    <div
+      onClick={handleClick}
+      style={{
+        minWidth: minWidth ? minWidth : undefined, height: '100%',
+      }}
+    >
+      {fullData.lightNameText}
+    </div>
+  </>);
 };
 
 export default LightSection;
