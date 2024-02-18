@@ -33,7 +33,10 @@ const ShowOptions = ({optionMap}) => {
     className={'ul_li_on_modal'}
     key={index}
   >
-    <li>
+    <li style={{
+      backgroundColor:row.bgColor,
+      color:row.color,
+    }}>
       <input
         onChange={(e) => changeIsActive({checked: e.target.checked, id: row.id})}
         checked={row.isActive}
@@ -41,7 +44,7 @@ const ShowOptions = ({optionMap}) => {
         type={"checkbox"}/>
 
       <label
-        className={'select-none mx-2'}
+        className={'select-none mx-2 block'}
         htmlFor={row.id + row.category}
       >{row.key}</label>
     </li>
