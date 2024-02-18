@@ -15,7 +15,7 @@ const ScreenshotButton = () => {
     // Use dom-to-image to capture the screenshot
     domtoimage.toBlob(element).then(blob => {
 
-      const fileName = fullData?.fileNumberText + `.jpg` || 'screenShot.jpg';
+      const fileName = fullData?.fileNumberText ? fullData?.fileNumberText + `.jpg` : 'codePlease.jpg';
       // Use FileSaver.js to save the blob as a file
       saveAs(blob, fileName);
       setFullData({...afterSubmit});
@@ -50,7 +50,7 @@ const ScreenshotButton = () => {
     style={{
       fontFamily: 'tahoma ,serif', cursor: 'pointer',
     }}
-    onClick={onClickHandler}
+    onClick={handleScreenshot}
   >
     اسکرین شات جهت برش
   </button>);
