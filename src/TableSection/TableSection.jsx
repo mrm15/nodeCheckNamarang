@@ -4,6 +4,9 @@ import {useContext} from "react";
 import {MainContext} from "../Context/Context.jsx";
 import MyDatePicker from "../MyDatePicker/MyDatePicker.jsx";
 import LightSection from "../LightSection/LightSection.jsx";
+import TransistorSection from "../TransistorSection/TransistorSection.jsx";
+import SendTypeOptions from "../SendTypeSection/SendTypeOptions.jsx";
+import SendTypeSection from "../SendTypeSection/sendTypeSection.jsx";
 
 const MyComponent = () => {
   const helper = useContext(MainContext);
@@ -19,16 +22,19 @@ const MyComponent = () => {
         <th className={'px-2'}>تاریخ</th>
         <th className={'px-2'}>شماره فایل</th>
       </tr>
-
       <tr>
-        <td className={''}><InputTextArea
-
-          minWidth={200}
-          myKeyOfFullData={'customerNameText'}
-          fontSize={fullData.customerNameFontSize}/></td>
-        <td className={'px-4 py-2'}><LightSection/></td>
-        <td className={'px-4 py-2'}>اطلاعات ترانس</td>
-        <td className={'px-4 py-2'}>اطلاعات نوع ارسال</td>
+        <td className={''}>
+          <InputTextArea
+            minWidth={200}
+            myKeyOfFullData={'customerNameText'}
+            fontSize={fullData.customerNameFontSize}/>
+        </td>
+        <td className={'px-4 py-2'}>
+          <LightSection minWidth={190}/>
+        </td>
+        <td className={'px-4 py-2'}><TransistorSection minWidth={190} /></td>
+        {/* نوع ارسال*/}
+        <td className={'px-4 py-2'}><SendTypeSection minWidth={100} /></td>
         <td className={'px-4 py-2'}>
           <MyDatePicker/>
         </td>
@@ -51,8 +57,6 @@ const MyComponent = () => {
           <InputTextArea
             myKeyOfFullData={'descriptionText'}
             fontSize={fullData.descriptionFontSize}/></td>
-
-
       </tr>
       </tbody>
     </table>
