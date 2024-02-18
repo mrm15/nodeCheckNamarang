@@ -20,7 +20,6 @@ const MyComponent = () => {
   }
 
 
-
   const handleInputChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -50,17 +49,19 @@ const MyComponent = () => {
 
 
   return (<div
-className={'flex flex-row-reverse items-end '}
+    className={'flex flex-row-reverse items-end  items-center '}
   >
-  <div
+    <div
 
-  className={'font_size_45 font-bold'}
-  style={{fontFamily:'arial,serif'}}
-  >
+      className={'font_size_45 font-bold'}
+      style={{
+        fontFamily: 'arial,serif', fontSize: '200px', fontWeight: 'bold'
+      }}
+    >
 
-    {fullData.fileNumberText}
+      {fullData.fileNumberText}
 
-  </div>
+    </div>
     {/* File input */}
     {/*<input*/}
     {/*  type="file"*/}
@@ -75,12 +76,10 @@ className={'flex flex-row-reverse items-end '}
          ref={contentRef}
          id={'picture_section_Div_contentEditable'}
          onClick={makeItEmpty}
-         // onFocus={selectTextPlease}
-      style={{
-        minHeight:'100px',
-        minWidth:'100px',
-        border:'1px solid rgba(0, 0, 0, 0.1)',
-      }}
+      // onFocus={selectTextPlease}
+         style={{
+           minHeight: '100px', minWidth: '100px', border: '1px solid rgba(0, 0, 0, 0.1)',
+         }}
     >
       اینجا فایل را paste کنید
     </div>
