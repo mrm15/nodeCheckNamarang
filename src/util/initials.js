@@ -1,14 +1,14 @@
 const lightModalData = [// category SMD
-  {key: 'آفتابی', value: '', bgColor: '', color: '', isActive: false, id: 1, category: 'smd', categoryText: 'smd'},////
-  {key: 'سفید ', value: '', bgColor: '', color: '', isActive: false, id: 2, category: 'smd', categoryText: 'smd'},//
-  {key: 'قرمز ', value: '', bgColor: '', color: '', isActive: false, id: 3, category: 'smd', categoryText: 'smd'},//
-  {key: 'انبه ای ', value: '', bgColor: '', color: '', isActive: false, id: 4, category: 'smd', categoryText: 'smd'}, //
+  {key: 'آفتابی', value: '',    bgColor: '#ffff00', color: 'black', isActive: false, id: 1, category: 'smd', categoryText: 'smd'},////
+  {key: 'سفید ', value: '',    bgColor: '#ffffff', color: 'black', isActive: false, id: 2, category: 'smd', categoryText: 'smd'},//
+  {key: 'قرمز ', value: '',    bgColor: '#ff0000', color: 'black', isActive: false, id: 3, category: 'smd', categoryText: 'smd'},//
+  {key: 'انبه ای ', value: '',   bgColor: '#d9a712', color: 'black', isActive: false, id: 4, category: 'smd', categoryText: 'smd'}, //
   //  category injection
   {
     key: 'آفتابی',
     value: '',
-    bgColor: '',
-    color: '',
+    bgColor: '#ffff00',
+    color: 'black',
     isActive: false,
     id: 5,
     category: 'injection',
@@ -17,8 +17,8 @@ const lightModalData = [// category SMD
   {
     key: 'سفید ',
     value: '',
-    bgColor: '',
-    color: '',
+    bgColor: '#ffffff',
+    color: 'black',
     isActive: false,
     id: 6,
     category: 'injection',
@@ -27,8 +27,8 @@ const lightModalData = [// category SMD
   {
     key: 'قرمز ',
     value: '',
-    bgColor: '',
-    color: '',
+    bgColor: '#ff0000',
+    color: 'black',
     isActive: false,
     id: 7,
     category: 'injection',
@@ -37,8 +37,8 @@ const lightModalData = [// category SMD
   {
     key: 'انبه ای ',
     value: '',
-    bgColor: '',
-    color: '',
+    bgColor: '#d9a712',
+    color: 'black',
     isActive: false,
     id: 8,
     category: 'injection',
