@@ -26,15 +26,16 @@ function TransistorSection({minWidth}) {
 
   const transButtonHandler = ({text, checkForm}) => {
 
-    setIsModalOpen(false);
+
     if (!checkForm) {
       setFullData({transistorNameText: text, ...afterCloseTransistorModal})
     } else {
       //
       let MyNewText = <></>
-
+      let hasValue = false;
       fullData.transistorModalData.forEach(row => {
         if (row.value) {
+          hasValue = true
           // Assuming row.value contains the text you want to add
           MyNewText = (<>
             {MyNewText} {/* Add existing content */}
@@ -43,9 +44,13 @@ function TransistorSection({minWidth}) {
           </>);
         }
       });
+
+      if (!hasValue) {
+        return
+      }
       setFullData({transistorNameText: MyNewText, ...afterCloseTransistorModal})
     }
-
+    setIsModalOpen(false);
 
   }
   return (<>
