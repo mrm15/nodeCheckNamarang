@@ -55,7 +55,8 @@ const MyComponent = () => {
 
       className={'font_size_45 font-bold'}
       style={{
-        fontFamily: 'arial,serif', fontSize: '200px', fontWeight: 'bold'
+        fontFamily: 'arial,serif', fontSize: '200px', fontWeight: 'bold',
+        color:'#fe0b0d',
       }}
     >
 
