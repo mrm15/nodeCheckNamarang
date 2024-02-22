@@ -65,16 +65,32 @@ const MyComponent = () => {
             padding: 0,
           }}
           colSpan={5}>
-          <InputTextArea
-            myKeyOfFullData={'descriptionText'}
-            fontSize={fullData.descriptionFontSize}/></td>
+
+              <div className={'flex items-center'}>
+                <div className={'w-full'}>
+                  <InputTextArea
+
+                    myKeyOfFullData={'descriptionText'}
+                    fontSize={fullData.descriptionFontSize}/>
+                </div>
+                <div style={{
+                  width:350
+                }}>
+                  {fullData.spacer ? '(' +' اسپیسر ' + fullData.spacer + ')':''}
+                  {fullData.flusher ? '(' +' فلاشر ' + fullData.flusher + ')' :''}
+
+                </div>
+              </div>
+        </td>
       </tr>
       </tbody>
     </table>
     <div className={'text-left mx-5 font_size_12'}
 
     >
-      {fullData.fileNameUnique}   {nodeGiriName}
+      {fullData.fileNameUnique} {nodeGiriName}
+
+
     </div>
   </div>);
 };

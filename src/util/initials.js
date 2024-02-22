@@ -47,17 +47,17 @@ const lightModalData = [// category SMD
 
 ]
 const transistorModalData = [// category SMD
-  {key: 'ترانس 200', value: '', bgColor: '', color: '', isActive: false, id: 1, category: 'smd', categoryText: ''},////
-  {key: 'ترانس 300 ', value: '', bgColor: '', color: '', isActive: false, id: 2, category: 'smd', categoryText: ''},//
-  {key: 'ترانس 400 ', value: '', bgColor: '', color: '', isActive: false, id: 3, category: 'smd', categoryText: ''},//
+  {key: 'ترانس 200 A', value: '', bgColor: '', color: '', isActive: false, id: 1, category: 'smd', categoryText: ''},////
+  {key: 'ترانس 300 A', value: '', bgColor: '', color: '', isActive: false, id: 2, category: 'smd', categoryText: ''},//
+  {key: 'ترانس 400 A', value: '', bgColor: '', color: '', isActive: false, id: 3, category: 'smd', categoryText: ''},//
 
 
 ]
 const transistorModalDataNeon = [// category SMD
-  {key: 'ترانس 5', value: '', bgColor: '', color: '', isActive: false, id: 4, category: 'neon', categoryText: ''},////
-  {key: 'ترانس 10 ', value: '', bgColor: '', color: '', isActive: false, id: 5, category: 'neon', categoryText: ''},//
-  {key: 'ترانس 15 ', value: '', bgColor: '', color: '', isActive: false, id: 6, category: 'neon', categoryText: ''},//
-  {key: 'ترانس 20 ', value: '', bgColor: '', color: '', isActive: false, id: 7, category: 'neon', categoryText: ''},//
+  {key: 'ترانس 5 A', value: '', bgColor: '', color: '', isActive: false, id: 4, category: 'neon', categoryText: ''},////
+  {key: 'ترانس 10 A', value: '', bgColor: '', color: '', isActive: false, id: 5, category: 'neon', categoryText: ''},//
+  {key: 'ترانس 15 A', value: '', bgColor: '', color: '', isActive: false, id: 6, category: 'neon', categoryText: ''},//
+  {key: 'ترانس 20 A', value: '', bgColor: '', color: '', isActive: false, id: 7, category: 'neon', categoryText: ''},//
 
 
 ]
@@ -70,6 +70,11 @@ export const initialObjectState = {
   sendTypeText: 'کلیک کنید',
   fileNumberText: '',
   descriptionText: '',
+
+
+  spacer:'',
+  flusher:'',
+
 
   customerNameFontSize: 16,
   lightFontSize: 16,
@@ -89,6 +94,11 @@ export const afterSubmit = {
   fileNameUnique: '',
   fileNumberText: '',
   descriptionText: '',
+
+  spacer:'',
+  flusher:'',
+
+
   lightModalData
 }
 export const afterCloseLightModal = {

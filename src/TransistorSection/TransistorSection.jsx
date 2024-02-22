@@ -51,7 +51,7 @@ function TransistorSection({minWidth,fontSize}) {
           // Assuming row.value contains the text you want to add
           MyNewText = (<>
             {MyNewText} {/* Add existing content */}
-            <div>نئون_{row.value}-عدد-{row.key.replaceAll('ترانس', '')}</div>
+            <div>{row.value}-عدد-{row.key.replaceAll('ترانس', '')}</div>
             {/* Add div element with text */}
           </>);
         }
@@ -71,17 +71,18 @@ function TransistorSection({minWidth,fontSize}) {
       <div className={'min-w-96'}>
         <div className={'flex gap-4 '}>
           <div className="flex flex-col w-full">
-            <div className={'w-full text-center font-bold border-2 '}>
-              اطلاعات ترانس
-            </div>
+
             <div className={'w-full flex gap-4'}>
               <div>
                 <TransistorShowOptions
+                  title={' ترانس'}
                   optionMap={MyTransistorModalData}
                   transistorModalData={'transistorModalData'}
                 />
               </div> <div>
                 <TransistorShowOptions
+                  title={' نئون'}
+
                   optionMap={MyTransistorModalDataNeon}
                   transistorModalData={'transistorModalDataNeon'}
                 />
