@@ -1,30 +1,30 @@
 import {useContext} from 'react';
 import {MainContext} from "../Context/Context.jsx";
 
-const TransistorShowOptions = ({optionMap}) => {
+const TransistorShowOptions = ({optionMap , transistorModalData}) => {
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
 
   const changeIsActive = ({id, checked}) => {
-    const newTextArray = fullData.transistorModalData.map(r => {
+    const newTextArray = fullData[transistorModalData].map(r => {
       const row = {...r}
       if (row.id === id) {
         row.isActive = checked
       }
       return row
     });
-    setFullData({transistorModalData: newTextArray})
+    setFullData({[transistorModalData]: newTextArray})
   }
 
   const changeValueHandler = ({id, value}) => {
-    const newTextArray = fullData.transistorModalData.map(r => {
+    const newTextArray = fullData[transistorModalData].map(r => {
       const row = {...r}
       if (row.id === id) {
         row.value = value
       }
       return row
     });
-    setFullData({transistorModalData: newTextArray})
+    setFullData({[transistorModalData]: newTextArray})
 
   }
 

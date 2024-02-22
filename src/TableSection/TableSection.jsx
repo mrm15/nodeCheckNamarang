@@ -11,6 +11,9 @@ import SendTypeSection from "../SendTypeSection/sendTypeSection.jsx";
 const MyComponent = () => {
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
+
+  const localStorageNodeGiriName = localStorage.getItem('nodeGiriName')
+  const nodeGiriName = localStorageNodeGiriName ? localStorageNodeGiriName : ''
   return (<div>
     <table className={"myTableCss"}>
       <tbody>
@@ -30,11 +33,19 @@ const MyComponent = () => {
             fontSize={fullData.customerNameFontSize}/>
         </td>
         <td className={'px-4 py-2'}>
-          <LightSection minWidth={190}/>
+          <LightSection
+            fontSize={fullData.lightFontSize}
+            minWidth={190}/>
         </td>
-        <td className={'px-4 py-2'}><TransistorSection minWidth={190} /></td>
+        <td className={'px-4 py-2'}><TransistorSection
+
+          fontSize={fullData.transistorFontSize}
+          minWidth={190}/></td>
         {/* نوع ارسال*/}
-        <td className={'px-4 py-2'}><SendTypeSection minWidth={100} /></td>
+        <td className={'px-4 py-2'}><SendTypeSection minWidth={100}
+
+                                                     fontSize={fullData.sendTypeFontSize}
+        /></td>
         <td className={'px-4 py-2'}>
           <MyDatePicker/>
         </td>
@@ -63,7 +74,7 @@ const MyComponent = () => {
     <div className={'text-left mx-5 font_size_12'}
 
     >
-      {fullData.fileNameUnique}
+      {fullData.fileNameUnique}   {nodeGiriName}
     </div>
   </div>);
 };

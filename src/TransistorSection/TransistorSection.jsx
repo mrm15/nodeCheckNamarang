@@ -6,13 +6,14 @@ import TransistorShowOptions from "./TransistorShowOptions.jsx";
 import {afterCloseLightModal, afterCloseTransistorModal} from "../util/initials.js";
 
 // eslint-disable-next-line react/prop-types
-function TransistorSection({minWidth}) {
+function TransistorSection({minWidth,fontSize}) {
 
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
 
 
   const MyTransistorModalData = [...fullData.transistorModalData]
+  const MyTransistorModalDataNeon = [...fullData.transistorModalDataNeon]
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,6 +45,18 @@ function TransistorSection({minWidth}) {
           </>);
         }
       });
+      fullData.transistorModalDataNeon.forEach(row => {
+        if (row.value) {
+          hasValue = true
+          // Assuming row.value contains the text you want to add
+          MyNewText = (<>
+            {MyNewText} {/* Add existing content */}
+            <div>نئون_{row.value}-عدد-{row.key.replaceAll('ترانس', '')}</div>
+            {/* Add div element with text */}
+          </>);
+        }
+      });
+
 
       if (!hasValue) {
         return
@@ -61,15 +74,27 @@ function TransistorSection({minWidth}) {
             <div className={'w-full text-center font-bold border-2 '}>
               اطلاعات ترانس
             </div>
-            <div className={'w-full'}>
-              <TransistorShowOptions
-                optionMap={MyTransistorModalData}
-              />
+            <div className={'w-full flex gap-4'}>
+              <div>
+                <TransistorShowOptions
+                  optionMap={MyTransistorModalData}
+                  transistorModalData={'transistorModalData'}
+                />
+              </div> <div>
+                <TransistorShowOptions
+                  optionMap={MyTransistorModalDataNeon}
+                  transistorModalData={'transistorModalDataNeon'}
+                />
+              </div>
+
             </div>
           </div>
 
         </div>
         <div className={'w-full flex items-center content-center justify-center mt-3'}>
+          <button onClick={() => transButtonHandler({text: 'سوال شود'})}
+                  className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> سوال شود
+          </button>
           <button onClick={() => transButtonHandler({text: 'ندارد'})}
                   className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> ندارد
           </button>
@@ -87,6 +112,7 @@ function TransistorSection({minWidth}) {
       onClick={openModal}
       style={{
         minWidth: minWidth ? minWidth : undefined, height: '100%',
+        fontSize:fontSize,
       }}
     >
       {fullData.transistorNameText}

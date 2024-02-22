@@ -7,7 +7,7 @@ import {afterCloseLightModal, afterCloseTransistorModal} from "../util/initials.
 import {FaCar} from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-function SendTypeSection({minWidth}) {
+function SendTypeSection({minWidth,fontSize}) {
 
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
@@ -41,6 +41,9 @@ function SendTypeSection({minWidth}) {
 
         </div>
         <div className={'w-full flex items-center content-center justify-center mt-3'}>
+          <button onClick={() => buttonHandler({text: 'سوال شود'})}
+                  className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> سوال شود
+          </button>
           <button onClick={() => buttonHandler({text: 'ندارد'})}
                   className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> ندارد
           </button>
@@ -62,6 +65,7 @@ function SendTypeSection({minWidth}) {
       onClick={openModal}
       style={{
         minWidth: minWidth ? minWidth : undefined, height: '100%',
+        fontSize:fontSize
       }}
     >
       {fullData.sendTypeText}

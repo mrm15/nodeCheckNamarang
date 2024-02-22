@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import  {useContext, useState} from "react";
 import {MainContext} from "../Context/Context.jsx";
 import Modal from "../Modal/Modal.jsx";
 import ShowOptions from "./ShowOptions.jsx";
@@ -6,7 +6,7 @@ import {afterCloseLightModal} from "../util/initials.js";
 
 
 // eslint-disable-next-line react/prop-types
-const LightSection = ({minWidth}) => {
+const LightSection = ({minWidth,fontSize}) => {
 
 
   const helper = useContext(MainContext);
@@ -83,6 +83,9 @@ const LightSection = ({minWidth}) => {
           </div>
         </div>
         <div className={'w-full flex items-center content-center justify-center mt-3'}>
+          <button onClick={() => lightButtonHandler({text: 'سوال شود'})}
+                  className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> سوال شود
+          </button>
           <button onClick={() => lightButtonHandler({text: 'ندارد'})}
                   className={'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1'}> ندارد
           </button>
@@ -104,6 +107,7 @@ const LightSection = ({minWidth}) => {
       style={{
         minWidth: minWidth ? minWidth : undefined, height: '100%',
         textAlign:"justify",
+        fontSize:fontSize,
 
       }}
     >

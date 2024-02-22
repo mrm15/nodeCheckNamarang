@@ -53,6 +53,14 @@ const transistorModalData = [// category SMD
 
 
 ]
+const transistorModalDataNeon = [// category SMD
+  {key: 'ترانس 5', value: '', bgColor: '', color: '', isActive: false, id: 4, category: 'neon', categoryText: ''},////
+  {key: 'ترانس 10 ', value: '', bgColor: '', color: '', isActive: false, id: 5, category: 'neon', categoryText: ''},//
+  {key: 'ترانس 15 ', value: '', bgColor: '', color: '', isActive: false, id: 6, category: 'neon', categoryText: ''},//
+  {key: 'ترانس 20 ', value: '', bgColor: '', color: '', isActive: false, id: 7, category: 'neon', categoryText: ''},//
+
+
+]
 export const initialObjectState = {
   reload: 0,
   fileNameUnique: "",
@@ -69,7 +77,8 @@ export const initialObjectState = {
   sendTypeFontSize: 16,
   descriptionFontSize: 16,
   lightModalData,
-  transistorModalData
+  transistorModalData,
+  transistorModalDataNeon,
 }
 
 export const afterSubmit = {
@@ -86,5 +95,5 @@ export const afterCloseLightModal = {
   lightModalData
 }
 export const afterCloseTransistorModal = {
-  transistorModalData
+  transistorModalData , transistorModalDataNeon
 }

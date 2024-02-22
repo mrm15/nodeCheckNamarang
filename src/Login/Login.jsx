@@ -6,8 +6,8 @@ const LoginPage = () => {
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
 
-  const validPhoneNumbers = ['09384642159', '09120413502',]
-  const validPhonePassword = ['09384642159', '09120413502',]
+  const validPhoneNumbers = ['09384642159', '09120413502','09119770454',]
+  const validPhonePassword = ['09384642159', '09120413502','09119770454',]
 
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
@@ -21,6 +21,21 @@ const LoginPage = () => {
       // Calculate the new timestamp by adding 1 week to the current timestamp
       const newTimestamp = currentTimestamp + oneWeekInMilliseconds;
       localStorage.setItem('namarangNodeGiri', newTimestamp)
+
+      let nodeGiriName ='';
+      if(phoneNumber==='09384642159'){
+        nodeGiriName ='محمد'
+      }
+      if(phoneNumber==='09120413502'){
+        nodeGiriName ='silverfacade'
+      }
+      if(phoneNumber==='09119770454'){
+        nodeGiriName ='سجاد'
+      }
+
+      localStorage.setItem('nodeGiriName', nodeGiriName)
+
+
       setFullData({reload: fullData.reload + 1})
     }
   };

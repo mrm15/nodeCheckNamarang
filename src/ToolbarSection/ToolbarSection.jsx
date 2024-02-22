@@ -8,8 +8,8 @@ function ToolbarSection(props) {
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
 
-  const plusStep = 3;
-  const minusStep = -3
+  const plusStep = 1;
+  const minusStep = -1
   const changeFontSize = (number, type) => {
     const temp = fullData[type] + number;
     if (temp < 0) {
@@ -47,7 +47,7 @@ function ToolbarSection(props) {
 
         </button>
         <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(3, 'lightFontSize')}>
+                onMouseDown={() => changeFontSize(minusStep, 'lightFontSize')}>
           <FontAwesomeIcon icon={faArrowDown}/>
         </button>
       </div>
