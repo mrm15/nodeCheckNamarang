@@ -16,19 +16,23 @@ const MyComponent = () => {
 
 
   try {
-    return (<DatePicker
-      onChange={(date) => {
-        if (date) { /* empty */
-        } else { /* empty */
-        }
-      }}
-      calendar={persian}
-      placeholder="تاریخ"
-      locale={persian_fa}
-      value={todayDate}
-      calendarPosition="bottom-right"
-      hideOnScroll
-    />);
+    return (<div
+      className={"div_wrap_input"}
+    >
+      <DatePicker
+        onChange={(date) => {
+          if (date) { /* empty */
+          } else { /* empty */
+          }
+        }}
+        calendar={persian}
+        placeholder="تاریخ"
+        locale={persian_fa}
+        value={todayDate}
+        calendarPosition="bottom-right"
+        hideOnScroll
+      />
+    </div>);
   } catch (error) {
     return <>{error?.toString()}</>
   }

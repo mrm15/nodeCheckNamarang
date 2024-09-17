@@ -1,0 +1,22 @@
+.tableSection2 {
+  td {
+    vertical-align: top;
+    border: 1px solid black;
+    font-size: clamp(5px, 2vw, 15px); /* Adjust font size between 8px and 12px based on viewport width */
+  }
+
+  ul.tableRow {
+    margin: 0;
+    li:first-child {
+      padding: 5px;
+      border-bottom: 1px solid black;
+      overflow: hidden;
+      font-size: clamp(8px, 2vw, 12px); /* Dynamically scale the font size */
+    }
+
+    li:nth-child(2) {
+      padding: 5px;
+      border-top: 0;
+    }
+  }
+}

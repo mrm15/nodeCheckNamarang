@@ -8,7 +8,7 @@ import TransistorSection from "../TransistorSection/TransistorSection.jsx";
 import SendTypeOptions from "../SendTypeSection/SendTypeOptions.jsx";
 import SendTypeSection from "../SendTypeSection/sendTypeSection.jsx";
 
-const MyComponent = () => {
+const TableSection = () => {
   const helper = useContext(MainContext);
   const {setFullData, fullData} = helper
 
@@ -42,10 +42,11 @@ const MyComponent = () => {
           fontSize={fullData.transistorFontSize}
           minWidth={190}/></td>
         {/* نوع ارسال*/}
-        <td className={'px-4 py-2'}><SendTypeSection minWidth={100}
-
-                                                     fontSize={fullData.sendTypeFontSize}
-        /></td>
+        <td className={'px-4 py-2'}>
+          <SendTypeSection
+            minWidth={100}
+            fontSize={fullData.sendTypeFontSize}
+          /></td>
         <td className={'px-4 py-2'}>
           <MyDatePicker/>
         </td>
@@ -66,21 +67,21 @@ const MyComponent = () => {
           }}
           colSpan={5}>
 
-              <div className={'flex items-center'}>
-                <div className={'w-full'}>
-                  <InputTextArea
+          <div className={'flex items-center'}>
+            <div className={'w-full'}>
+              <InputTextArea
 
-                    myKeyOfFullData={'descriptionText'}
-                    fontSize={fullData.descriptionFontSize}/>
-                </div>
-                <div style={{
-                  width:350
-                }}>
-                  {fullData.spacer ? '(' +' اسپیسر ' + fullData.spacer + ')':''}
-                  {fullData.flusher ? '(' +' فلاشر ' + fullData.flusher + ')' :''}
+                myKeyOfFullData={'descriptionText'}
+                fontSize={fullData.descriptionFontSize}/>
+            </div>
+            <div style={{
+              width: 350
+            }}>
+              {fullData.spacer ? '(' + ' اسپیسر ' + fullData.spacer + ')' : ''}
+              {fullData.flusher ? '(' + ' فلاشر ' + fullData.flusher + ')' : ''}
 
-                </div>
-              </div>
+            </div>
+          </div>
         </td>
       </tr>
       </tbody>
@@ -95,4 +96,4 @@ const MyComponent = () => {
   </div>);
 };
 
-export default MyComponent;
+export default TableSection;

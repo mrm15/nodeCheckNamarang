@@ -42,10 +42,10 @@ const ResizableTextarea = ({fontSize, myKeyOfFullData, numberType, minWidth}) =>
       onChange={handleChange}
       style={{
         fontSize: `${fontSize ? fontSize : 14}px`, textAlign: 'center',
-
+        minHeight: "50px",
         width: '100%',
         // height: '100%',
-        padding: 10, // resize: 'none',
+        padding: 5, // resize: 'none',
         overflow: "visible"
       }}
 

@@ -3,19 +3,23 @@ import PictureSection from "../PictureSection/PictureSection.jsx";
 import ToolbarSection from "../ToolbarSection/ToolbarSection.jsx";
 import ScreenshotButton from "../ScreenShotButton/ScreenShotButton.jsx";
 import NeonData from "../NeonData/NeonData.jsx";
+import FactorListFromHesabfa from "../FactorListFromHesabfa/FactorListFromHesabfa.jsx";
+import TableSection2 from "../TableSection2/TableSection2.jsx";
 
-const MyComponent = () => {
+const ProductNode = () => {
   return (<div>
 
+    <FactorListFromHesabfa />
     <ToolbarSection/>
-    <NeonData />
+    {/*<NeonData />*/}
 
     <div
       id={'i_want_to_take_screenshot_here'}
       className={'p-5 flex flex-col items-center'}
     >
       <PictureSection/>
-      <TableSection/>
+      {/*<TableSection/>*/}
+      <TableSection2/>
     </div>
     <ScreenshotButton/>
 
@@ -23,4 +27,4 @@ const MyComponent = () => {
   </div>);
 };
 
-export default MyComponent;
+export default ProductNode;

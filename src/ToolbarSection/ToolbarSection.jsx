@@ -25,62 +25,62 @@ function ToolbarSection(props) {
   const myDescriptionFontSize = fullData?.descriptionFontSize?.toString().length === 1 ? "0" + fullData?.descriptionFontSize : fullData?.descriptionFontSize;
 
   return (<div className={'flex border-2 rounded p-1'}>
-    <div className={'toolbar flex items-center justify-center'}>اندازه فونت نام مشتری ({myCustomerNameFontSize})
-      <div>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(plusStep, 'customerNameFontSize')}>
-          <FontAwesomeIcon icon={faArrowUp}/>
+    {/*<div className={'toolbar flex items-center justify-center'}>اندازه فونت نام مشتری ({myCustomerNameFontSize})*/}
+    {/*  <div>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(plusStep, 'customerNameFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowUp}/>*/}
 
-        </button>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(minusStep, 'customerNameFontSize')}>
-          <FontAwesomeIcon icon={faArrowDown}/>
-        </button>
-      </div>
+    {/*    </button>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(minusStep, 'customerNameFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowDown}/>*/}
+    {/*    </button>*/}
+    {/*  </div>*/}
 
-    </div>
-    <div className={'toolbar flex items-center justify-center'}>اندازه نور ({myLightFontSize})
-      <div>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(plusStep, 'lightFontSize')}>
-          <FontAwesomeIcon icon={faArrowUp}/>
+    {/*</div>*/}
+    {/*<div className={'toolbar flex items-center justify-center'}>اندازه نور ({myLightFontSize})*/}
+    {/*  <div>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(plusStep, 'lightFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowUp}/>*/}
 
-        </button>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(minusStep, 'lightFontSize')}>
-          <FontAwesomeIcon icon={faArrowDown}/>
-        </button>
-      </div>
+    {/*    </button>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(minusStep, 'lightFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowDown}/>*/}
+    {/*    </button>*/}
+    {/*  </div>*/}
 
-    </div>
-    <div className={'toolbar flex items-center justify-center'}>اندازه ترانس ({myTransistorFontSize})
-      <div>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(plusStep, 'transistorFontSize')}>
-          <FontAwesomeIcon icon={faArrowUp}/>
+    {/*</div>*/}
+    {/*<div className={'toolbar flex items-center justify-center'}>اندازه ترانس ({myTransistorFontSize})*/}
+    {/*  <div>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(plusStep, 'transistorFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowUp}/>*/}
 
-        </button>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(minusStep, 'transistorFontSize')}>
-          <FontAwesomeIcon icon={faArrowDown}/>
-        </button>
-      </div>
+    {/*    </button>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(minusStep, 'transistorFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowDown}/>*/}
+    {/*    </button>*/}
+    {/*  </div>*/}
 
-    </div>
-    <div className={'toolbar flex items-center justify-center'}>اندازه نوع ارسال ({mySendTypeFontSize})
-      <div>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(plusStep, 'sendTypeFontSize')}>
-          <FontAwesomeIcon icon={faArrowUp}/>
+    {/*</div>*/}
+    {/*<div className={'toolbar flex items-center justify-center'}>اندازه نوع ارسال ({mySendTypeFontSize})*/}
+    {/*  <div>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(plusStep, 'sendTypeFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowUp}/>*/}
 
-        </button>
-        <button className={'border-2 px-2  rounded mx-1'}
-                onMouseDown={() => changeFontSize(minusStep, 'sendTypeFontSize')}>
-          <FontAwesomeIcon icon={faArrowDown}/>
-        </button>
-      </div>
+    {/*    </button>*/}
+    {/*    <button className={'border-2 px-2  rounded mx-1'}*/}
+    {/*            onMouseDown={() => changeFontSize(minusStep, 'sendTypeFontSize')}>*/}
+    {/*      <FontAwesomeIcon icon={faArrowDown}/>*/}
+    {/*    </button>*/}
+    {/*  </div>*/}
 
-    </div>
+    {/*</div>*/}
     <div className={'toolbar flex items-center justify-center'}>اندازه توضیحات  ({myDescriptionFontSize})
       <div>
         <button className={'border-2 px-2  rounded mx-1'}

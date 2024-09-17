@@ -84,6 +84,9 @@ export const initialObjectState = {
   lightModalData,
   transistorModalData,
   transistorModalDataNeon,
+  tableColumnArray:[],// این یه آرایه از آبجکت ها هست که عنوان داره . آیتم های داخلیش به صورت آرایه ای از آجکت ها هستن
+
+
 }
 
 export const afterSubmit = {

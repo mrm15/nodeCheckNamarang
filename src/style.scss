@@ -2,7 +2,7 @@
 
 * {
   font-family: 'bTitr', serif;
-  font-size: 20px;
+  //font-size: 20px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,9 +30,12 @@ html {
 
 .myTableCss {
   border-collapse: collapse;
+  text-align: start;
 
   td, th {
     border: 1px solid #130202;
+    text-align: start;
+
   }
 
 
@@ -73,6 +76,7 @@ html {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  height: -webkit-fill-available;
 }
 
 .input_in_table {
